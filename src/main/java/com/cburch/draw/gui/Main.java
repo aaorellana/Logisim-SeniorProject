@@ -4,9 +4,16 @@
 package com.cburch.draw.gui;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.util.Collections;
 
+//my imports start
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+//my imports end
 
 import com.cburch.draw.canvas.Canvas;
 import com.cburch.draw.model.CanvasObject;
@@ -44,7 +51,7 @@ public class Main {
         manager.attributesSelected();
         HorizontalSplitPane west = new HorizontalSplitPane(toolbar, table, 0.5);
         VerticalSplitPane all = new VerticalSplitPane(west, canvas, 0.3);
-
+        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(all, BorderLayout.CENTER);
         frame.pack();

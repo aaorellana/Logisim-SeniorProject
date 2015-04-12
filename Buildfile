@@ -55,7 +55,7 @@ def javahelp()
 end
 
 define 'logisim' do
-  project.version = '2.7.2'
+  project.version = '2.7.3'
   compile.using :lint=>'all'
   compile.with JAVAHELP, MRJADAPTER, COLORPICKER, FONTCHOOSER, COMMONS_LANG, COMMONS_COLLECTIONS
   compile {

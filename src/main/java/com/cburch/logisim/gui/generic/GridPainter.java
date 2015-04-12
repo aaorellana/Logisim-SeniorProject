@@ -8,11 +8,19 @@ import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 import java.awt.image.MemoryImageSource;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.Arrays;
+
+import javax.imageio.ImageIO;
+
 
 public class GridPainter {
     public static final String ZOOM_PROPERTY = "zoom";
@@ -142,6 +150,19 @@ public class GridPainter {
                 g.drawImage(img, x0 + x, y0 + y, dest);
             }
         }
+        //my code starts
+        
+        try 
+        {
+        	Image smiley = ImageIO.read(getClass().getResourceAsStream("/smiley.png"));
+        	g.drawImage(smiley, 200, 200,dest);
+		} catch (IOException e) 
+        {
+			//g.drawString("caught error" + e, 100, 100);
+		}
+        g.setColor(Color.RED);
+        g.drawString("Hello World", 100, 100);
+        //my code ends
     }
 
     private void paintGridOld(Graphics g, int size, double f, Rectangle clip) {
@@ -286,6 +307,6 @@ public class GridPainter {
             }
         }
         gridImage = destination.createImage(new MemoryImageSource(w, w, pix, 0, w));
-        gridImageWidth = w;
-    }
+		gridImageWidth = w;
+	}
 }

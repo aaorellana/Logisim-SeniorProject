@@ -14,7 +14,7 @@ if (System.properties['os.name'].toLowerCase().contains('mac')) {
 }
 
 mainClassName = "com.cburch.logisim.Main"
-version = '2.7.2'
+version = '2.7.3'
 title = 'Logisim'
 description = 'Logisim: Logic Simulator'
 test.scanForTestClasses = false

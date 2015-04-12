@@ -28,11 +28,11 @@ import org.slf4j.LoggerFactory;
 /**
  * Main entry point into Logisim.
  *
- * @version 2.7.2
- * @author Carl Burch
+ * @version 2.7.3
+ * @author Andres Orellana
  */
 public class Main {
-    public static final LogisimVersion VERSION = LogisimVersion.get(2, 7, 2);
+    public static final LogisimVersion VERSION = LogisimVersion.get(2, 7, 3);
     public static final String VERSION_NAME = VERSION.toString();
     public static final int COPYRIGHT_YEAR = 2012;
 
