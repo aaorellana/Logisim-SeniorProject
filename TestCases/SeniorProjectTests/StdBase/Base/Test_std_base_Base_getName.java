@@ -1,4 +1,4 @@
-package SeniorProjectTests.StdBase;
+package SeniorProjectTests.StdBase.Base;
 
 import static org.junit.Assert.*;
 
