@@ -14,6 +14,13 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.std.arith.BitAdder;
 import com.cburch.logisim.std.arith.BitFinder;
 
+/*
+ * 1. throws an error when given null as a input
+ * 2.
+ * 3.
+ * 4.
+ * 5.
+ */
 //not done
 
 public class Test_std_arith_BitAdder_getOffsetBounds {
@@ -24,48 +31,45 @@ public class Test_std_arith_BitAdder_getOffsetBounds {
 
 	@Test
 	public void test1() {
-		
-		AttributeSet attr = null;
-		AttributeSet attr2 = null;
-		AttributeSet attr3 = null;
-		BitWidth width = BitWidth.create(4);
-		
-		Bounds test_bound = null;
-		Bounds test_bound2 = null;
-		Bounds test_bound3 = null;
+		//makes sure that an exception is thrown when given null as an input
 		BitAdder adder = new BitAdder();
 		BitAdder adder2 = new BitAdder();
 		BitAdder adder3 = new BitAdder();
-		//Attributes<V> vtest = ;
-		//vtest.Attribute("helo", "world");
 
-		//AttributeSet vtest = null;
-		//vtest.setValue(vtest, Value.createKnown(width, 5));
-		//attr.getAttributes();
-		
-		//attr.setValue(vtest, Value.createKnown(width, 10));
-		
-		//attr.setValue(vtest, Value.createKnown(width, 10));
-		
-		//attr.setValue(attr, Value.createKnown(width, 5));
-		
-		//attr.setValue(vtest, Value.createKnown(BitWidth.create(4), 5));
-		//attr.setValue(vtest, Value.createKnown(BitWidth.create(4), 5));
-		
-		
-		test_bound = adder.getOffsetBounds(attr);
-		//test_bound2 = adder2.getOffsetBounds(attr2);
-		//test_bound3 = adder3.getOffsetBounds(attr3);
-		
-		
-		//System.out.print(adder.getDisplayName());
-		//System.out.print(adder.getOffsetBounds(attr));
-		//System.out.print(adder.toString());
-		//fail("Not yet implemented");
+		try
+		{
+			adder.getOffsetBounds(null);
+		}
+		catch(NullPointerException e)
+		{
+			System.out.println("Test 1 in StdArith BitAdder getOffsetBounds: " + e);
+		}
+		try
+		{
+			adder2.getOffsetBounds(null);
+		}
+		catch(NullPointerException e)
+		{
+			System.out.println("Test 1 in StdArith BitAdder getOffsetBounds: " + e);
+		}
+		try
+		{
+			adder3.getOffsetBounds(null);
+		}
+		catch(NullPointerException e)
+		{
+			System.out.println("Test 1 in StdArith BitAdder getOffsetBounds: " + e);
+		}
 	}
 	@Test
 	public void test2() {
-		fail("Not yet implemented");
+		BitAdder adder = new BitAdder();
+		BitAdder adder2 = new BitAdder();
+		BitAdder adder3 = new BitAdder();
+		AttributeSet atrs = null;
+		
+		//adder2.getOffsetBounds(atrs);
+		
 	}
 	@Test
 	public void test3() {
