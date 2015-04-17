@@ -5,7 +5,7 @@ package SeniorProjectTests.AnalyzeModel.TruthTable;
  * 2. makes sure that it returns the correct output
  * 3. make sure it returns the correct object
  * 4. fails because the output is correct
- * 5. 
+ * 5. throws and error when index is out of bounds
  */
 
 import static org.junit.Assert.*;
@@ -162,6 +162,7 @@ public class Test_analyze_model_TruthTable_getInputHeader {
 	}
 	@Test
 	public void test5() {
+		//throws and error when index is out of bounds
 		AnalyzerModel analy1 = new AnalyzerModel();
 		AnalyzerModel analy2 = new AnalyzerModel();
 		AnalyzerModel analy3 = new AnalyzerModel();
