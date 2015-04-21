@@ -1,4 +1,4 @@
-package SeniorProjectTests.DrawShapes;
+package SeniorProjectTests.DrawShapes.Curve;
 
 import static org.junit.Assert.*;
 
