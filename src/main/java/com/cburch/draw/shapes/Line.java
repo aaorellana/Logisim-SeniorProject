@@ -54,6 +54,7 @@ public class Line extends AbstractCanvasObject {
             return false;
         }
     }
+    
 
     @Override
     public int matchesHashCode() {
