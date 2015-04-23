@@ -10,6 +10,14 @@ import com.cburch.draw.model.HandleGesture;
 import com.cburch.draw.shapes.Curve;
 import com.cburch.logisim.data.Location;
 
+/*
+ * 1. makes sure that the method returns modified values
+ * 2. makes sure it returns the correct object
+ * 3. 
+ * 4.
+ * 5.
+ */
+
 public class Test_draw_shapes_Curve_moveHandle {
 
 	@AfterClass
@@ -18,7 +26,32 @@ public class Test_draw_shapes_Curve_moveHandle {
 
 	@Test
 	public void test1() {
-		//
+		//makes sure that the method returns the correct values
+		Location loc1 = Location.create(10, 20);
+		Location loc2 = Location.create(15, 25);
+		Location loc3 = Location.create(20, 30);
+	
+		Curve cur1 = new Curve(loc1, loc2, loc3);
+		
+		Handle handle1 = new Handle(cur1, 3, 2);
+		Handle handle_test = new Handle(cur1, 3, 5);
+		Handle handle_test1 = new Handle(cur1, 3, 5);
+		Handle handle_test2 = new Handle(cur1, 3, 5);
+		Handle handle_test3 = new Handle(cur1, 3, 5);
+		
+		HandleGesture handle_gesture = new HandleGesture(handle1, 1, 1, 0);
+
+		handle_test = cur1.moveHandle(handle_gesture);
+		
+		//handle_test.getLocation() should return (15, 25)
+		assertNotEquals(handle_test1.getLocation(), handle_test.getLocation());
+		assertNotEquals(handle_test2.getLocation(), handle_test.getLocation());
+		assertNotEquals(handle_test3.getLocation(), handle_test.getLocation());
+		
+	}
+	@Test
+	public void test2() {
+		//makes sure that the method returns modified values
 		Location loc1 = Location.create(10, 20);
 		Location loc2 = Location.create(15, 25);
 		Location loc3 = Location.create(20, 30);
@@ -28,29 +61,39 @@ public class Test_draw_shapes_Curve_moveHandle {
 		Curve cur3 = new Curve(loc2, loc2, loc2);
 		
 		Handle handle1 = new Handle(cur1, 3, 2);
-		Handle handle2 = new Handle(cur2, 8, 1);
-		Handle handle3 = new Handle(cur3, 7, 3);
-		Handle handle_test;
 		
-		HandleGesture handle_gesture = new HandleGesture(handle1, 13, 15, 0);
-		
+		HandleGesture handle_gesture = new HandleGesture(handle1, 1, 1, 0);
 
-		handle_test = cur1.moveHandle(handle_gesture);
+		cur1.moveHandle(handle_gesture);
+		cur2.moveHandle(handle_gesture);
+		cur3.moveHandle(handle_gesture);
 		
-		System.out.println(handle_test.getLocation().toString());
-		
-		handle_test = cur2.moveHandle(handle_gesture);
-		
-		System.out.println(handle_test.getLocation().toString());
-		
-	}
-	@Test
-	public void test2() {
-		fail("Not yet implemented");
+		assertEquals(cur1.moveHandle(handle_gesture).getClass(), cur2.moveHandle(handle_gesture).getClass());
+		assertEquals(cur3.moveHandle(handle_gesture).getClass(), cur2.moveHandle(handle_gesture).getClass());
+		assertEquals(cur1.moveHandle(handle_gesture).getClass(), cur3.moveHandle(handle_gesture).getClass());
 	}
 	@Test
 	public void test3() {
-		fail("Not yet implemented");
+		Location loc1 = Location.create(10, 20);
+		Location loc2 = Location.create(15, 25);
+		Location loc3 = Location.create(20, 30);
+	
+		Curve cur1 = new Curve(loc1, loc2, loc3);
+		
+		Handle handle1 = new Handle(cur1, 3, 2);
+		Handle handle_test = new Handle(cur1, 3, 5);
+		Handle handle_test1 = new Handle(cur1, 3, 5);
+		Handle handle_test2 = new Handle(cur1, 3, 5);
+		Handle handle_test3 = new Handle(cur1, 3, 5);
+		
+		HandleGesture handle_gesture = new HandleGesture(handle1, 1, 1, 0);
+
+		handle_test = cur1.moveHandle(handle_gesture);
+		
+		System.out.println(cur1.getEnd1());
+		
+		System.out.println(cur1.moveHandle(handle_gesture).getLocation());
+		
 	}
 	@Test
 	public void test4() {
