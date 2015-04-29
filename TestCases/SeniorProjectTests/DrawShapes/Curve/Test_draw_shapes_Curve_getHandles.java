@@ -61,8 +61,8 @@ public class Test_draw_shapes_Curve_getHandles {
 		
 		//System.out.println(ges.toString());
 		//System.out.println(cur1.getHandles(null));
-		
-		//System.out.println(cur1.getHandles(handle_gesture).get(2).getLocation());
+		assertEquals(cur1.getHandles(null), cur1.getHandles(handle_gesture));
+		//System.out.println(cur1.getHandles(handle_gesture));
 		
 	}
 	@Test
