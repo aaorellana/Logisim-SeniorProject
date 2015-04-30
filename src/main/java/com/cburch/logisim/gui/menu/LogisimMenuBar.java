@@ -54,12 +54,14 @@ public class LogisimMenuBar extends JMenuBar {
     public static final LogisimMenuItem SIMULATE_STEP = new LogisimMenuItem("SimulateStep");
     public static final LogisimMenuItem TICK_ENABLE = new LogisimMenuItem("TickEnable");
     public static final LogisimMenuItem TICK_STEP = new LogisimMenuItem("TickStep");
+    
 
     private class MyListener implements LocaleListener {
         @Override
         public void localeChanged() {
             file.localeChanged();
             edit.localeChanged();
+            select.localeChanged();
             project.localeChanged();
             simulate.localeChanged();
             help.localeChanged();
@@ -79,6 +81,7 @@ public class LogisimMenuBar extends JMenuBar {
     private MenuProject project;
     private MenuSimulate simulate;
     private MenuHelp help;
+    private MenuSelect select;
 
     public LogisimMenuBar(JFrame parent, Project proj) {
         this.parent = parent;
@@ -88,6 +91,7 @@ public class LogisimMenuBar extends JMenuBar {
 
         add(file = new MenuFile(this));
         add(edit = new MenuEdit(this));
+        add(select = new MenuSelect(this));
         add(project = new MenuProject(this));
         add(simulate = new MenuSimulate(this));
         add(new WindowMenu(parent));
