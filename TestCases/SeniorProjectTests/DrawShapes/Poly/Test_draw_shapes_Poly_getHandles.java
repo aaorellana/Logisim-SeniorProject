@@ -15,9 +15,7 @@ import com.cburch.logisim.data.Location;
 /*
  * 1. makes sure it returns the object its suppose to
  * 2. makes sure that the same positions given are returned into a list of handles
- * 3.
- * 4.
- * 5.
+ * 3. making sure that setting false in Poly wont affect the handles
  */
 
 public class Test_draw_shapes_Poly_getHandles {
@@ -58,41 +56,28 @@ public class Test_draw_shapes_Poly_getHandles {
 		
 		HandleGesture handle_gesture = new HandleGesture(handle, 13, 15, 1);
 		
-		//System.out.println(handle_gesture.getDeltaY());
 		assertEquals(Location.create(10, 29), poly1.getHandles(handle_gesture).get(0).getLocation());
 		assertEquals(Location.create(5, 9), poly1.getHandles(handle_gesture).get(1).getLocation());
 		assertEquals(Location.create(7, 3), poly1.getHandles(handle_gesture).get(2).getLocation());
-		//System.out.println(poly1.getHandles(handle_gesture).get(0).getLocation());
 	}
 	@Test
 	public void test3() {
-		//
+		//making sure that setting false in Poly wont affect the handles
 		ArrayList<Location> loclist = new ArrayList<Location>();
 		
 		loclist.add(Location.create(10, 29));
 		loclist.add(Location.create(5, 9));
 		loclist.add(Location.create(7, 3));
 		
-		Poly poly1 = new Poly(true, loclist);
+		Poly poly1 = new Poly(false, loclist);
 		
 		Handle handle = new Handle(poly1, 0, 0);
 		
 		HandleGesture handle_gesture = new HandleGesture(handle, 13, 15, 1);
 		
-		
-		//System.out.println(handle_gesture.getDeltaY());
 		assertEquals(Location.create(10, 29), poly1.getHandles(handle_gesture).get(0).getLocation());
 		assertEquals(Location.create(5, 9), poly1.getHandles(handle_gesture).get(1).getLocation());
 		assertEquals(Location.create(7, 3), poly1.getHandles(handle_gesture).get(2).getLocation());
-		//System.out.println(poly1.getHandles(handle_gesture).get(0).getLocation());
-	}
-	@Test
-	public void test4() {
-		fail("Not yet implemented");
-	}
-	@Test
-	public void test5() {
-		fail("Not yet implemented");
 	}
 
 }

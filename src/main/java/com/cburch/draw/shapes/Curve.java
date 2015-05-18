@@ -9,13 +9,17 @@ import java.awt.geom.QuadCurve2D;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import org.apache.commons.collections15.list.UnmodifiableList;
+
 import com.cburch.draw.model.CanvasObject;
 import com.cburch.draw.model.Handle;
 import com.cburch.draw.model.HandleGesture;
 import com.cburch.logisim.data.Attribute;
 import com.cburch.logisim.data.Bounds;
 import com.cburch.logisim.data.Location;
+
 import static com.cburch.logisim.util.LocaleString.*;
 
 public class Curve extends FillableCanvasObject {
@@ -208,6 +212,8 @@ public class Curve extends FillableCanvasObject {
             ret = hs[2];
         }
         bounds = CurveUtil.getBounds(toArray(p0), toArray(p1), toArray(p2));
+        //activates the dialog to show what interacts with this method or if its ever used
+        JOptionPane.showMessageDialog(null, "moveHandle in Curve class under DrawShapes Activated");
         return ret;
     }
 
